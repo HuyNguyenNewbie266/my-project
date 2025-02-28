@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab6</title>
+</head>
+
+<body>
+    
+    <form>
+        <fieldset style="background-color: antiquewhite; border: 5px solid; width: 400px; margin-left: 0;margin-right: auto; margin-top: auto; margin-bottom: auto;">
+            <legend><strong>Fahrenheit to Centigrade</strong></legend>
+            <br>Fahrenheit: <input type="number" id="fahrenheit" name="fahrenheit" >
+            <input style="margin-left:6px ;" type="button" value="Calculate" onclick="calculate()"><br><br> 
+            <button style="margin-left:60px;;" type="reset">Reset</button><br><br>
+            To Centigrade: <input type = "number" id="centigrade" name="centigrade"  readonly><br><br/>
+            History: <p id="history" name="history" readonly></p><br><br>
+    </form>
+</body>
+<script>
+    function calculate(fahrenheit) 
+    { var fahrenheit = document.getElementById("fahrenheit").value;
+    var celsius= fahrenheit-32*5/9;
+    celsius = celsius.toFixed(2);
+    document.getElementById("centigrade").value = celsius;
+    var history = document.getElementById("history").value;
+    message =fahrenheit + " °F = "+celsius + " °C";
+    document.getElementById("history").innerHTML += message + "<br>";
+
+    }
+    
+</script>
+</html>
